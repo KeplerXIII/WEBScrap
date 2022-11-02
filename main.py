@@ -17,7 +17,7 @@ for article in articles:
     title = article.find('a', class_='tm-article-snippet__title-link')
     span_title = title.find('span').text
 
-    if KEYWORDS in hubs:
+    if KEYWORDS & hubs:
         href = title['href']
         url = 'https://habr.com' + href
         print(f'Дата: {date} - Заголовок: {span_title} - Ссылка: {url}')
